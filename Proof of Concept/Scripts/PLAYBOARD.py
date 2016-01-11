@@ -15,6 +15,8 @@ GPIO.setup(13, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(7, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(15, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
+#--------------------een gebouw zetten ----------------------------------------------------------------------------------------------
+
 def drawBuilding( locx, locy, locz, floors, width, depth, floorheight, wallmaterial, floormaterial ):
     topx = locx+width
     topy = locy+((floorheight+1)*floors)
@@ -44,6 +46,7 @@ def drawBuilding( locx, locy, locz, floors, width, depth, floorheight, wallmater
             for j in range( floorheight-1 ):
                 mc.setBlocks( locx+depth, windowYloc+j , locz+1, locx+depth, windowYloc+j, locz+(width-1), block.GLASS_PANE )
 
+#--------------------Een tree genereren ----------------------------------------------------------------------------------------------
 
 def drawTree(xpos, ypos, zpos):
     wood = 17
@@ -80,6 +83,7 @@ def drawTree(xpos, ypos, zpos):
         mc.setBlock(xpos+2, ypos+x, zpos, leave)
         time.sleep(0.1)
 
+#--------------------een trap genereren ----------------------------------------------------------------------------------------------
 
 def drawStairs(xpos, ypos, zpos):
     for x in range(0, 100):
